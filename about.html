@@ -10,78 +10,7 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="CSS/about us.css">
   <style>
-    /* ── HAMBURGER ── */
-    .hbg {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      cursor: pointer;
-      border: none;
-      background: none;
-      padding: 4px;
-      width: 32px;
-      height: 32px;
-    }
-
-    .hbg span {
-      display: block;
-      width: 22px;
-      height: 1.5px;
-      background: var(--ink, #1e1810);
-      transform-origin: center;
-      transition: transform .38s cubic-bezier(.23, 1, .32, 1),
-                  opacity   .28s ease,
-                  width     .3s ease;
-    }
-
-    .hbg.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .hbg.open span:nth-child(2) { opacity: 0; width: 0; }
-    .hbg.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    /* ── MOBILE NAV DRAWER ── */
-    .mob-nav {
-      display: none;
-      flex-direction: column;
-      position: fixed;
-      top: 65px; left: 0; right: 0;
-      background: #fff;
-      border-top: 1px solid rgba(232, 130, 74, .15);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
-      z-index: 199;
-      padding: 0 7%;
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height .42s cubic-bezier(.23, 1, .32, 1),
-                  padding    .42s cubic-bezier(.23, 1, .32, 1);
-    }
-
-    .mob-nav.open {
-      max-height: 400px;
-      padding: 2rem 7%;
-    }
-
-    .mob-nav a {
-      display: block;
-      font-family: 'Outfit', sans-serif;
-      font-size: .72rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: #8a7a6a;
-      font-weight: 400;
-      text-decoration: none;
-      padding: .6rem 0;
-      border-bottom: 1px solid rgba(232, 130, 74, .15);
-      transition: color .25s;
-    }
-
-    .mob-nav a:last-child { border-bottom: none; }
-    .mob-nav a:hover,
-    .mob-nav a.active { color: #e8824a; }
-
-    @media (max-width: 900px) {
-      .hbg { display: flex; }
-    }
+    
   </style>
 </head>
 
@@ -89,14 +18,14 @@
 
   <!-- NAV -->
   <nav id="nav">
-    <a class="logo" href="index.html">Jensen<span>Decors</span></a>
+    <img src="Images/Logo.jpg" alt="Logo" class="logo">
     <ul class="nav-menu">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About Us</a></li>
-      <li><a href="index.html#categories">Products</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="products.html">Products</a></li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
-    <a class="nav-cta" href="index.html#categories">Shop Now</a>
+    <a class="nav-cta" href="products.html">Browse All</a>
     <button class="hbg" id="hbg" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>

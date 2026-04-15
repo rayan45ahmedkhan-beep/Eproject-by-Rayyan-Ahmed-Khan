@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,19 +8,19 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500&display=swap"
     rel="stylesheet" />
-    <link rel="stylesheet" href="CSS/products.css">
+  <link rel="stylesheet" href="CSS/products.css">
 </head>
 
 <body>
 
   <!-- NAV -->
   <nav id="nav">
-    <a class="logo" href="index.html">Jensen<span>Decors</span></a>
+    <img src="Images/Logo.jpg" alt="Logo" class="logo">
     <ul class="nav-menu">
-      <li><a href="products.html" class="active">Products</a></li>
-      <li><a href="index.html#brands">Brands</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
     </ul>
     <a class="nav-cta" href="#product-grid-section">Browse All</a>
     <button class="hbg" id="hbg" aria-label="Toggle menu" aria-expanded="false">
@@ -27,10 +28,10 @@
     </button>
   </nav>
 
-  <!-- MOBILE NAV DRAWER -->
-  <div class="mob-nav" id="mobNav" role="navigation" aria-label="Mobile navigation">
-    <a href="index.html#brands">Home</a>
-    <a href="index.html#about">About Us</a>
+  <!-- MOBILE NAV -->
+  <div class="mob-nav" id="mobNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
     <a href="products.html" class="active">Products</a>
     <a href="contact.html">Contact Us</a>
   </div>
@@ -39,266 +40,276 @@
   <div class="page-header">
     <div class="eyebrow">Jensen Decors Collection</div>
     <h1>Our <em>Products</em></h1>
-    <p>Browse our full range of premium wall décor — from bold metal art to elegant mirrors. Filter by brand to find exactly what you need.</p>
+    <p>Browse our full range of premium wall décor. Filter by category and brand to find exactly what you need.</p>
   </div>
 
-  <!-- FILTER BAR -->
-  <div class="filter-bar">
-    <div class="filter-group">
-      <span class="filter-label">Filter by Brand:</span>
+  <!-- FILTER SYSTEM -->
+  <div class="filter-system" id="product-grid-section">
+
+    <div class="filter-row">
+      <span class="filter-row-label">Category</span>
+      <div class="filter-pills" id="cat-pills">
+        <button class="fp active" data-cat="all">All Categories</button>
+        <button class="fp" data-cat="Metal Wall Art">Metal Wall Art</button>
+        <button class="fp" data-cat="Wall Papers">Wall Papers</button>
+        <button class="fp" data-cat="Photo Frame Art">Photo Frame Art</button>
+        <button class="fp" data-cat="Mirror Art">Mirror Art</button>
+        <button class="fp" data-cat="Wall Shelves">Wall Shelves</button>
+        <button class="fp" data-cat="Wall Mounted Animals">Wall Mounted Animals</button>
+      </div>
     </div>
-    <span class="results-count" id="results-count">12 Products</span>
-  </div>
-  <div style="width: 100%; display: flex; align-items: center; justify-content: space-around; margin-top: 20px;">
-    <button class="filter-btn active" data-brand="all">All Brands</button>
-    <button class="filter-btn" data-brand="Gloster">Gloster</button>
-    <button class="filter-btn" data-brand="Artisan Co.">Artisan Co.</button>
-    <button class="filter-btn" data-brand="Nordic House">Nordic House</button>
-    <button class="filter-btn" data-brand="UrbanWall">UrbanWall</button>
-    <button class="filter-btn" data-brand="Luxe Décor">Luxe Décor</button>
+
+    <div class="filter-divider"></div>
+
+    <div class="filter-row">
+      <span class="filter-row-label">Brand</span>
+      <div class="filter-pills" id="brand-pills">
+        <button class="fp active" data-brand="all">All Brands</button>
+        <button class="fp" data-brand="Gloster">Gloster</button>
+        <button class="fp" data-brand="Artisan Co.">Artisan Co.</button>
+        <button class="fp" data-brand="Nordic House">Nordic House</button>
+        <button class="fp" data-brand="UrbanWall">UrbanWall</button>
+        <button class="fp" data-brand="Luxe Décor">Luxe Décor</button>
+      </div>
+    </div>
+
+    <div class="results-bar">
+      <span class="results-count-txt" id="results-count">12 Products</span>
+      <div class="active-filters" id="active-filters"></div>
+    </div>
   </div>
 
   <!-- PRODUCTS GRID -->
-  <section class="products-section" id="product-grid-section">
+  <section class="products-section">
     <div class="product-grid" id="product-grid">
 
-      <!-- Product 1 -->
-      <div class="product-card" data-brand="Gloster" data-id="1">
+      <div class="product-card" data-brand="Gloster" data-cat="Metal Wall Art" data-id="1">
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Copper Sunburst Panel" />
           <span class="product-badge">Bestseller</span>
+          <span class="product-cat-tag">Metal Wall Art</span>
         </div>
         <div class="product-body">
           <div class="product-brand">Gloster</div>
           <div class="product-name">Copper Sunburst Panel</div>
-          <p class="product-desc">Hand-hammered copper panel with radial sunburst motif. Ideal for living rooms and corporate lobbies. Weather-resistant finish.</p>
+          <p class="product-desc">Hand-hammered copper panel with radial sunburst motif. Ideal for living rooms and
+            corporate lobbies. Weather-resistant finish.</p>
           <div class="product-price">Rs. 12,500</div>
           <div class="product-footer">
-            <div class="product-actions">
-              <button class="btn-compare" data-id="1" onclick="addToCompare('1', this)">+ Compare</button>
-              <button class="btn-detail" onclick="openModal('1')">Details</button>
-            </div>
+            <button class="btn-compare" data-id="1" onclick="addToCompare('1', this)">+ Compare</button>
+            <button class="btn-detail" onclick="openModal('1')">Details</button>
           </div>
         </div>
       </div>
 
-      <!-- Product 2 -->
-      <div class="product-card" data-brand="Gloster" data-id="2">
+      <div class="product-card" data-brand="Gloster" data-cat="Metal Wall Art" data-id="2">
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Oxidised Iron Tree" />
+          <span class="product-cat-tag">Metal Wall Art</span>
         </div>
         <div class="product-body">
           <div class="product-brand">Gloster</div>
           <div class="product-name">Oxidised Iron Tree</div>
-          <p class="product-desc">Large-format oxidised iron wall sculpture of a branching tree. Adds organic depth to any minimal interior.</p>
+          <p class="product-desc">Large-format oxidised iron wall sculpture of a branching tree. Adds organic depth to
+            any minimal interior.</p>
           <div class="product-price">Rs. 18,000</div>
           <div class="product-footer">
-            <div class="product-actions">
-              <button class="btn-compare" data-id="2" onclick="addToCompare('2', this)">+ Compare</button>
-              <button class="btn-detail" onclick="openModal('2')">Details</button>
-            </div>
+            <button class="btn-compare" data-id="2" onclick="addToCompare('2', this)">+ Compare</button>
+            <button class="btn-detail" onclick="openModal('2')">Details</button>
           </div>
         </div>
       </div>
 
-      <!-- Product 3 -->
-      <div class="product-card" data-brand="Artisan Co." data-id="3">
+      <div class="product-card" data-brand="Artisan Co." data-cat="Mirror Art" data-id="3">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&q=80" alt="Hexagonal Mirror Set" />
+          <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&q=80"
+            alt="Hexagonal Mirror Set" />
           <span class="product-badge">New</span>
+          <span class="product-cat-tag">Mirror Art</span>
         </div>
         <div class="product-body">
           <div class="product-brand">Artisan Co.</div>
           <div class="product-name">Hexagonal Mirror Set</div>
-          <p class="product-desc">Set of five bevelled hexagonal mirrors in brushed gold frames. Arrange freely for a custom gallery-wall effect.</p>
+          <p class="product-desc">Set of five bevelled hexagonal mirrors in brushed gold frames. Arrange freely for a
+            custom gallery-wall effect.</p>
           <div class="product-price">Rs. 9,800</div>
           <div class="product-footer">
-            <div class="product-actions">
-              <button class="btn-compare" data-id="3" onclick="addToCompare('3', this)">+ Compare</button>
-              <button class="btn-detail" onclick="openModal('3')">Details</button>
-            </div>
+            <button class="btn-compare" data-id="3" onclick="addToCompare('3', this)">+ Compare</button>
+            <button class="btn-detail" onclick="openModal('3')">Details</button>
           </div>
         </div>
       </div>
 
-      <!-- Product 4 -->
-      <div class="product-card" data-brand="Artisan Co." data-id="4">
+      <div class="product-card" data-brand="Artisan Co." data-cat="Photo Frame Art" data-id="4">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80" alt="Vintage Botanical Frames" />
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80"
+            alt="Vintage Botanical Frames" />
+          <span class="product-cat-tag">Photo Frame Art</span>
         </div>
         <div class="product-body">
           <div class="product-brand">Artisan Co.</div>
           <div class="product-name">Vintage Botanical Frames</div>
-          <p class="product-desc">Set of three oak-framed botanical prints on premium archival paper. Timeless, elegant, and ready to hang.</p>
+          <p class="product-desc">Set of three oak-framed botanical prints on premium archival paper. Timeless, elegant,
+            and ready to hang.</p>
           <div class="product-price">Rs. 7,400</div>
           <div class="product-footer">
-            <div class="product-actions">
-              <button class="btn-compare" data-id="4" onclick="addToCompare('4', this)">+ Compare</button>
-              <button class="btn-detail" onclick="openModal('4')">Details</button>
-            </div>
+            <button class="btn-compare" data-id="4" onclick="addToCompare('4', this)">+ Compare</button>
+            <button class="btn-detail" onclick="openModal('4')">Details</button>
           </div>
         </div>
       </div>
 
-      <!-- Product 5 -->
-      <div class="product-card" data-brand="Nordic House" data-id="5">
+      <div class="product-card" data-brand="Nordic House" data-cat="Wall Shelves" data-id="5">
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Ash Wood Float Shelf" />
+          <span class="product-cat-tag">Wall Shelves</span>
         </div>
         <div class="product-body">
           <div class="product-brand">Nordic House</div>
           <div class="product-name">Ash Wood Float Shelf</div>
-          <p class="product-desc">Solid ash floating shelf with invisible brackets. Minimalist Scandinavian form that blends display and function seamlessly.</p>
+          <p class="product-desc">Solid ash floating shelf with invisible brackets. Minimalist Scandinavian form that
+            blends display and function seamlessly.</p>
           <div class="product-price">Rs. 5,200</div>
           <div class="product-footer">
-            <div class="product-actions">
-              <button class="btn-compare" data-id="5" onclick="addToCompare('5', this)">+ Compare</button>
-              <button class="btn-detail" onclick="openModal('5')">Details</button>
-            </div>
+            <button class="btn-compare" data-id="5" onclick="addToCompare('5', this)">+ Compare</button>
+            <button class="btn-detail" onclick="openModal('5')">Details</button>
           </div>
         </div>
       </div>
 
-      <!-- Product 6 -->
-      <div class="product-card" data-brand="Nordic House" data-id="6">
+      <div class="product-card" data-brand="Nordic House" data-cat="Wall Papers" data-id="6">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80" alt="Linen Woven Tapestry" />
+          <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80"
+            alt="Linen Woven Tapestry" />
           <span class="product-badge">New</span>
+          <span class="product-cat-tag">Wall Papers</span>
         </div>
         <div class="product-body">
           <div class="product-brand">Nordic House</div>
           <div class="product-name">Linen Woven Tapestry</div>
-          <p class="product-desc">Hand-woven Scandinavian wall tapestry in natural linen. Adds warmth and texture — perfect for bedrooms and studies.</p>
+          <p class="product-desc">Hand-woven Scandinavian wall tapestry in natural linen. Adds warmth and texture —
+            perfect for bedrooms and studies.</p>
           <div class="product-price">Rs. 6,900</div>
           <div class="product-footer">
-            <div class="product-actions">
-              <button class="btn-compare" data-id="6" onclick="addToCompare('6', this)">+ Compare</button>
-              <button class="btn-detail" onclick="openModal('6')">Details</button>
-            </div>
+            <button class="btn-compare" data-id="6" onclick="addToCompare('6', this)">+ Compare</button>
+            <button class="btn-detail" onclick="openModal('6')">Details</button>
           </div>
         </div>
       </div>
 
-      <!-- Product 7 -->
-      <div class="product-card" data-brand="UrbanWall" data-id="7">
+      <div class="product-card" data-brand="UrbanWall" data-cat="Metal Wall Art" data-id="7">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80" alt="Abstract Metal Canvas" />
+          <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80"
+            alt="Abstract Metal Canvas" />
+          <span class="product-cat-tag">Metal Wall Art</span>
         </div>
         <div class="product-body">
           <div class="product-brand">UrbanWall</div>
           <div class="product-name">Abstract Metal Canvas</div>
-          <p class="product-desc">Powder-coated steel abstract wall piece in matte black and rust. Bold industrial character for modern interiors.</p>
+          <p class="product-desc">Powder-coated steel abstract wall piece in matte black and rust. Bold industrial
+            character for modern interiors.</p>
           <div class="product-price">Rs. 14,200</div>
           <div class="product-footer">
-            <div class="product-actions">
-              <button class="btn-compare" data-id="7" onclick="addToCompare('7', this)">+ Compare</button>
-              <button class="btn-detail" onclick="openModal('7')">Details</button>
-            </div>
+            <button class="btn-compare" data-id="7" onclick="addToCompare('7', this)">+ Compare</button>
+            <button class="btn-detail" onclick="openModal('7')">Details</button>
           </div>
         </div>
       </div>
 
-      <!-- Product 8 -->
-      <div class="product-card" data-brand="UrbanWall" data-id="8">
+      <div class="product-card" data-brand="UrbanWall" data-cat="Wall Papers" data-id="8">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80" alt="City Blueprint Wallpaper" />
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80"
+            alt="City Blueprint Wallpaper" />
+          <span class="product-cat-tag">Wall Papers</span>
         </div>
         <div class="product-body">
           <div class="product-brand">UrbanWall</div>
           <div class="product-name">City Blueprint Wallpaper</div>
-          <p class="product-desc">High-resolution blueprint-style city map wallpaper. Available in roll or panel format. Paste-the-wall application.</p>
+          <p class="product-desc">High-resolution blueprint-style city map wallpaper. Available in roll or panel format.
+            Paste-the-wall application.</p>
           <div class="product-price">Rs. 8,600</div>
           <div class="product-footer">
-            <div class="product-actions">
-              <button class="btn-compare" data-id="8" onclick="addToCompare('8', this)">+ Compare</button>
-              <button class="btn-detail" onclick="openModal('8')">Details</button>
-            </div>
+            <button class="btn-compare" data-id="8" onclick="addToCompare('8', this)">+ Compare</button>
+            <button class="btn-detail" onclick="openModal('8')">Details</button>
           </div>
         </div>
       </div>
 
-      <!-- Product 9 -->
-      <div class="product-card" data-brand="Luxe Décor" data-id="9">
+      <div class="product-card" data-brand="Luxe Décor" data-cat="Wall Mounted Animals" data-id="9">
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=600&q=80" alt="Gilded Stag Trophy" />
           <span class="product-badge">Premium</span>
+          <span class="product-cat-tag">Wall Mounted Animals</span>
         </div>
         <div class="product-body">
           <div class="product-brand">Luxe Décor</div>
           <div class="product-name">Gilded Stag Trophy</div>
-          <p class="product-desc">Gold-leaf wall-mounted stag head in resin. A statement piece that brings bold character to any dining or living space.</p>
+          <p class="product-desc">Gold-leaf wall-mounted stag head in resin. A statement piece that brings bold
+            character to any dining or living space.</p>
           <div class="product-price">Rs. 22,000</div>
           <div class="product-footer">
-            <div class="product-actions">
-              <button class="btn-compare" data-id="9" onclick="addToCompare('9', this)">+ Compare</button>
-              <button class="btn-detail" onclick="openModal('9')">Details</button>
-            </div>
+            <button class="btn-compare" data-id="9" onclick="addToCompare('9', this)">+ Compare</button>
+            <button class="btn-detail" onclick="openModal('9')">Details</button>
           </div>
         </div>
       </div>
 
-      <!-- Product 10 -->
-      <div class="product-card" data-brand="Luxe Décor" data-id="10">
+      <div class="product-card" data-brand="Luxe Décor" data-cat="Mirror Art" data-id="10">
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1567016526105-22da7c13161a?w=600&q=80" alt="Ornate Oval Mirror" />
+          <span class="product-cat-tag">Mirror Art</span>
         </div>
         <div class="product-body">
           <div class="product-brand">Luxe Décor</div>
           <div class="product-name">Ornate Oval Mirror</div>
-          <p class="product-desc">Hand-carved wooden frame in antique gold finish encasing a full-length bevelled oval mirror. A centrepiece for any room.</p>
+          <p class="product-desc">Hand-carved wooden frame in antique gold finish encasing a full-length bevelled oval
+            mirror. A centrepiece for any room.</p>
           <div class="product-price">Rs. 19,500</div>
           <div class="product-footer">
-            <div class="product-actions">
-              <button class="btn-compare" data-id="10" onclick="addToCompare('10', this)">+ Compare</button>
-              <button class="btn-detail" onclick="openModal('10')">Details</button>
-            </div>
+            <button class="btn-compare" data-id="10" onclick="addToCompare('10', this)">+ Compare</button>
+            <button class="btn-detail" onclick="openModal('10')">Details</button>
           </div>
         </div>
       </div>
 
-      <!-- Product 11 -->
-      <div class="product-card" data-brand="Gloster" data-id="11">
+      <div class="product-card" data-brand="Gloster" data-cat="Wall Shelves" data-id="11">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Steel Geometric Grid" />
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+            alt="Steel Geometric Grid" />
+          <span class="product-cat-tag">Wall Shelves</span>
         </div>
         <div class="product-body">
           <div class="product-brand">Gloster</div>
           <div class="product-name">Steel Geometric Grid</div>
-          <p class="product-desc">Modular powder-coated steel grid panel in matte white. Use as wall art or a functional display shelf system.</p>
+          <p class="product-desc">Modular powder-coated steel grid panel in matte white. Use as wall art or a functional
+            display shelf system.</p>
           <div class="product-price">Rs. 10,400</div>
           <div class="product-footer">
-            <div class="product-actions">
-              <button class="btn-compare" data-id="11" onclick="addToCompare('11', this)">+ Compare</button>
-              <button class="btn-detail" onclick="openModal('11')">Details</button>
-            </div>
+            <button class="btn-compare" data-id="11" onclick="addToCompare('11', this)">+ Compare</button>
+            <button class="btn-detail" onclick="openModal('11')">Details</button>
           </div>
         </div>
       </div>
 
-      <!-- Product 12 -->
-      <div class="product-card" data-brand="Nordic House" data-id="12">
+      <div class="product-card" data-brand="Nordic House" data-cat="Wall Shelves" data-id="12">
         <div class="product-img">
           <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=600&q=80" alt="Pine Ladder Shelf" />
+          <span class="product-cat-tag">Wall Shelves</span>
         </div>
         <div class="product-body">
           <div class="product-brand">Nordic House</div>
           <div class="product-name">Pine Ladder Shelf</div>
-          <p class="product-desc">Five-tier wall-leaning pine ladder shelf with natural oil finish. Lightweight, versatile, and Scandi-simple.</p>
+          <p class="product-desc">Five-tier wall-leaning pine ladder shelf with natural oil finish. Lightweight,
+            versatile, and Scandi-simple.</p>
           <div class="product-price">Rs. 8,100</div>
           <div class="product-footer">
-            <div class="product-actions">
-              <button class="btn-compare" data-id="12" onclick="addToCompare('12', this)">+ Compare</button>
-              <button class="btn-detail" onclick="openModal('12')">Details</button>
-            </div>
+            <button class="btn-compare" data-id="12" onclick="addToCompare('12', this)">+ Compare</button>
+            <button class="btn-detail" onclick="openModal('12')">Details</button>
           </div>
         </div>
       </div>
 
-      <!-- No results -->
-      <div class="no-results" id="no-results">
-        <p>No products found for this brand.</p>
-      </div>
-
+      <div class="no-results" id="no-results">No products found for this selection.</div>
     </div>
   </section>
 
@@ -318,6 +329,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="products.html">Products</a></li>
       <li><a href="index.html#brands">Brands</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <span class="foot-copy">© 2024 Jensen Decors. All rights reserved.</span>
@@ -348,11 +360,11 @@
         <div class="modal-name" id="modal-name"></div>
         <div class="modal-price" id="modal-price"></div>
         <div class="modal-divider"></div>
-        <div class="modal-section-title">Product Description</div>
+        <div class="modal-section-title">Description</div>
         <p class="modal-desc" id="modal-desc"></p>
         <div class="modal-section-title">Specifications</div>
         <ul class="modal-specs" id="modal-specs"></ul>
-        <a class="modal-download" href="#" id="modal-download">↓ Download Full Details (.docx)</a>
+        <a class="modal-download" id="modal-download" href="#" download>↓ Download Full Details (.docx)</a>
       </div>
     </div>
   </div>
@@ -369,99 +381,105 @@
   </div>
 
   <script>
-
-    // PRODUCT DATA
     var products = {
-      1:  { brand: "Gloster",      name: "Copper Sunburst Panel",   price: "Rs. 12,500", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",  desc: "Hand-hammered copper panel with a radial sunburst motif. Weather-resistant lacquer finish. Ideal for living rooms and lobbies.", material: "Copper",          dimensions: "90 × 90 cm",    weight: "4.2 kg",  finish: "Lacquered patina", mounting: "Keyhole bracket",    warranty: "2 years" },
-      2:  { brand: "Gloster",      name: "Oxidised Iron Tree",       price: "Rs. 18,000", img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",  desc: "Large oxidised iron wall sculpture of a branching tree. Adds organic depth to any minimal interior.",                          material: "Iron",             dimensions: "120 × 80 cm",   weight: "6.8 kg",  finish: "Natural oxidised",  mounting: "Concealed fixings", warranty: "2 years" },
-      3:  { brand: "Artisan Co.",  name: "Hexagonal Mirror Set",     price: "Rs. 9,800",  img: "https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&q=80",  desc: "Set of five bevelled hexagonal mirrors in brushed gold frames. Arrange freely for a custom gallery-wall effect.",               material: "Glass & Brass",    dimensions: "30 × 26 cm ea", weight: "0.8 kg",  finish: "Brushed gold",      mounting: "Adhesive & hook",   warranty: "1 year"  },
-      4:  { brand: "Artisan Co.",  name: "Vintage Botanical Frames", price: "Rs. 7,400",  img: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80",  desc: "Set of three oak-framed botanical prints on archival paper. Timeless, elegant and ready to hang.",                              material: "Oak & Paper",      dimensions: "40 × 50 cm ea", weight: "1.1 kg",  finish: "Natural oak",       mounting: "D-ring hanger",     warranty: "1 year"  },
-      5:  { brand: "Nordic House", name: "Ash Wood Float Shelf",     price: "Rs. 5,200",  img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80",    desc: "Solid ash floating shelf with invisible brackets. Supports up to 15 kg. Minimalist Scandinavian design.",                      material: "Solid ash",        dimensions: "80 × 20 × 3 cm",weight: "2.3 kg",  finish: "Natural oil",       mounting: "Invisible bracket", warranty: "2 years" },
-      6:  { brand: "Nordic House", name: "Linen Woven Tapestry",     price: "Rs. 6,900",  img: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80",  desc: "Hand-woven Scandinavian wall tapestry in natural linen. Adds warmth and texture to any room.",                                  material: "Natural linen",    dimensions: "60 × 90 cm",    weight: "0.6 kg",  finish: "Natural undyed",    mounting: "Included dowel",    warranty: "1 year"  },
-      7:  { brand: "UrbanWall",    name: "Abstract Metal Canvas",    price: "Rs. 14,200", img: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80",  desc: "Powder-coated steel abstract wall piece in matte black and rust. Bold industrial character for modern interiors.",               material: "Steel",            dimensions: "100 × 70 cm",   weight: "5.4 kg",  finish: "Powder coat",       mounting: "Wall bracket",      warranty: "3 years" },
-      8:  { brand: "UrbanWall",    name: "City Blueprint Wallpaper", price: "Rs. 8,600",  img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80",  desc: "Blueprint-style city map wallpaper in deep navy and white. Available in roll or panel format. Paste-the-wall application.",    material: "Non-woven vinyl",  dimensions: "53 cm × 10 m",  weight: "185 gsm", finish: "Matt",              mounting: "Paste-the-wall",    warranty: "1 year"  },
-      9:  { brand: "Luxe Décor",   name: "Gilded Stag Trophy",       price: "Rs. 22,000", img: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=600&q=80",  desc: "Gold-leaf wall-mounted stag head in hand-finished resin. A bold statement piece for any dining or living space.",               material: "Resin & Gold leaf", dimensions: "45 × 30 × 55 cm",weight: "3.1 kg", finish: "24k gold leaf",     mounting: "French cleat",      warranty: "2 years" },
-      10: { brand: "Luxe Décor",   name: "Ornate Oval Mirror",       price: "Rs. 19,500", img: "https://images.unsplash.com/photo-1567016526105-22da7c13161a?w=600&q=80",  desc: "Hand-carved wooden frame in antique gold finish with a full-length bevelled oval mirror. A centrepiece for any room.",          material: "Wood & Glass",     dimensions: "60 × 100 cm",   weight: "7.2 kg",  finish: "Antique gold",      mounting: "D-ring hanger",     warranty: "2 years" },
-      11: { brand: "Gloster",      name: "Steel Geometric Grid",     price: "Rs. 10,400", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",  desc: "Modular powder-coated steel grid panel in matte white. Use as wall art or a functional display shelf system.",                  material: "Steel",            dimensions: "60 × 60 cm",    weight: "1.8 kg",  finish: "Matte white",       mounting: "Wall screws",       warranty: "2 years" },
-      12: { brand: "Nordic House", name: "Pine Ladder Shelf",        price: "Rs. 8,100",  img: "https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=600&q=80",  desc: "Five-tier wall-leaning pine ladder shelf with natural oil finish. Lightweight, versatile and Scandi-simple.",                   material: "Solid pine",       dimensions: "40 × 180 cm",   weight: "5.0 kg",  finish: "Natural oil",       mounting: "Lean against wall", warranty: "1 year"  }
+      1: { brand: "Gloster", name: "Copper Sunburst Panel", price: "Rs. 12,500", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", desc: "Hand-hammered copper panel with a radial sunburst motif. Weather-resistant lacquer finish. Ideal for living rooms and corporate lobbies.", material: "Copper", dimensions: "90 × 90 cm", weight: "4.2 kg", finish: "Lacquered patina", mounting: "Keyhole bracket", warranty: "2 years", docFile: "product-1-Copper_Sunburst_Panel.docx" },
+      2: { brand: "Gloster", name: "Oxidised Iron Tree", price: "Rs. 18,000", img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80", desc: "Large oxidised iron wall sculpture of a branching tree. Adds organic depth to any minimal interior.", material: "Iron", dimensions: "120 × 80 cm", weight: "6.8 kg", finish: "Natural oxidised", mounting: "Concealed fixings", warranty: "2 years", docFile: "product-2-Oxidised_Iron_Tree.docx" },
+      3: { brand: "Artisan Co.", name: "Hexagonal Mirror Set", price: "Rs. 9,800", img: "https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&q=80", desc: "Set of five bevelled hexagonal mirrors in brushed gold frames. Arrange freely for a custom gallery-wall effect.", material: "Glass & Brass", dimensions: "30 × 26 cm each", weight: "0.8 kg ea", finish: "Brushed gold", mounting: "Adhesive strip & hook", warranty: "1 year", docFile: "product-3-Hexagonal_Mirror_Set.docx" },
+      4: { brand: "Artisan Co.", name: "Vintage Botanical Frames", price: "Rs. 7,400", img: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80", desc: "Set of three oak-framed botanical prints on archival paper. Timeless, elegant and ready to hang.", material: "Oak & Paper", dimensions: "40 × 50 cm each", weight: "1.1 kg ea", finish: "Natural oak", mounting: "D-ring hanger", warranty: "1 year", docFile: "product-4-Vintage_Botanical_Frames.docx" },
+      5: { brand: "Nordic House", name: "Ash Wood Float Shelf", price: "Rs. 5,200", img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80", desc: "Solid ash floating shelf with invisible brackets. Supports up to 15 kg. Minimalist Scandinavian design.", material: "Solid ash", dimensions: "80 × 20 × 3 cm", weight: "2.3 kg", finish: "Natural oil", mounting: "Invisible bracket (included)", warranty: "2 years", docFile: "product-5-Ash_Wood_Float_Shelf.docx" },
+      6: { brand: "Nordic House", name: "Linen Woven Tapestry", price: "Rs. 6,900", img: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80", desc: "Hand-woven Scandinavian wall tapestry in natural linen. Adds warmth and texture to any room.", material: "Natural linen", dimensions: "60 × 90 cm", weight: "0.6 kg", finish: "Natural undyed", mounting: "Included wooden dowel", warranty: "1 year", docFile: "product-6-Linen_Woven_Tapestry.docx" },
+      7: { brand: "UrbanWall", name: "Abstract Metal Canvas", price: "Rs. 14,200", img: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80", desc: "Powder-coated steel abstract wall piece in matte black and rust. Bold industrial character for modern interiors.", material: "Steel", dimensions: "100 × 70 cm", weight: "5.4 kg", finish: "Powder coat (matte)", mounting: "Wall bracket (included)", warranty: "3 years", docFile: "product-7-Abstract_Metal_Canvas.docx" },
+      8: { brand: "UrbanWall", name: "City Blueprint Wallpaper", price: "Rs. 8,600", img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80", desc: "Blueprint-style city map wallpaper in deep navy and white. Available in roll or panel format. Paste-the-wall application.", material: "Non-woven vinyl", dimensions: "53 cm × 10 m", weight: "185 gsm", finish: "Matt", mounting: "Paste-the-wall", warranty: "1 year", docFile: "product-8-City_Blueprint_Wallpaper.docx" },
+      9: { brand: "Luxe Décor", name: "Gilded Stag Trophy", price: "Rs. 22,000", img: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=600&q=80", desc: "Gold-leaf wall-mounted stag head in hand-finished resin. A bold statement piece for any dining or living space.", material: "Resin & 24k gold leaf", dimensions: "45 × 30 × 55 cm", weight: "3.1 kg", finish: "24k gold leaf", mounting: "French cleat (included)", warranty: "2 years", docFile: "product-9-Gilded_Stag_Trophy.docx" },
+      10: { brand: "Luxe Décor", name: "Ornate Oval Mirror", price: "Rs. 19,500", img: "https://images.unsplash.com/photo-1567016526105-22da7c13161a?w=600&q=80", desc: "Hand-carved wooden frame in antique gold finish with a full-length bevelled oval mirror. A centrepiece for any room.", material: "Wood & Glass", dimensions: "60 × 100 cm", weight: "7.2 kg", finish: "Antique gold", mounting: "D-ring hanger (heavy duty)", warranty: "2 years", docFile: "product-10-Ornate_Oval_Mirror.docx" },
+      11: { brand: "Gloster", name: "Steel Geometric Grid", price: "Rs. 10,400", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80", desc: "Modular powder-coated steel grid panel in matte white. Use as wall art or a functional display shelf system.", material: "Steel", dimensions: "60 × 60 cm", weight: "1.8 kg", finish: "Matte white", mounting: "Wall screws (included)", warranty: "2 years", docFile: "product-11-Steel_Geometric_Grid.docx" },
+      12: { brand: "Nordic House", name: "Pine Ladder Shelf", price: "Rs. 8,100", img: "https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=600&q=80", desc: "Five-tier wall-leaning pine ladder shelf with natural oil finish. Lightweight, versatile and Scandi-simple.", material: "Solid pine", dimensions: "40 × 180 cm", weight: "5.0 kg", finish: "Natural oil", mounting: "Lean against wall (pads included)", warranty: "1 year", docFile: "product-12-Pine_Ladder_Shelf.docx" }
     };
 
-    // BRAND FILTER
-    function filterByBrand(selectedBrand) {
+    // ── FILTER LOGIC ──
+    var activeCat = 'all';
+    var activeBrand = 'all';
+
+    function applyFilters() {
       var cards = document.querySelectorAll('.product-card');
       var count = 0;
+      cards.forEach(function (card) {
+        var matchCat = activeCat === 'all' || card.getAttribute('data-cat') === activeCat;
+        var matchBrand = activeBrand === 'all' || card.getAttribute('data-brand') === activeBrand;
+        if (matchCat && matchBrand) { card.style.display = ''; count++; }
+        else { card.style.display = 'none'; }
+      });
+      document.getElementById('results-count').textContent = count + ' Product' + (count !== 1 ? 's' : '');
+      document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
+      updateActiveTags();
+    }
 
-      for (var i = 0; i < cards.length; i++) {
-        var card = cards[i];
-        var cardBrand = card.getAttribute('data-brand');
-
-        if (selectedBrand === 'all' || cardBrand === selectedBrand) {
-          card.style.display = 'flex';
-          count++;
-        } else {
-          card.style.display = 'none';
-        }
+    function updateActiveTags() {
+      var af = document.getElementById('active-filters');
+      af.innerHTML = '';
+      if (activeCat !== 'all') {
+        var t = document.createElement('span'); t.className = 'af-tag'; t.textContent = activeCat; af.appendChild(t);
       }
-
-      document.getElementById('results-count').textContent = count + ' Products';
-      document.getElementById('no-results').style.display = (count === 0) ? 'block' : 'none';
+      if (activeBrand !== 'all') {
+        var t2 = document.createElement('span'); t2.className = 'af-tag'; t2.textContent = activeBrand; af.appendChild(t2);
+      }
     }
 
-    var filterBtns = document.querySelectorAll('.filter-btn');
-    for (var i = 0; i < filterBtns.length; i++) {
-      filterBtns[i].onclick = function() {
-        for (var j = 0; j < filterBtns.length; j++) {
-          filterBtns[j].classList.remove('active');
-        }
+    document.querySelectorAll('#cat-pills .fp').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#cat-pills .fp').forEach(function (b) { b.classList.remove('active'); });
         this.classList.add('active');
-        filterByBrand(this.getAttribute('data-brand'));
-      };
-    }
+        activeCat = this.getAttribute('data-cat');
+        applyFilters();
+      });
+    });
 
-    // DETAIL MODAL
+    document.querySelectorAll('#brand-pills .fp').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#brand-pills .fp').forEach(function (b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        activeBrand = this.getAttribute('data-brand');
+        applyFilters();
+      });
+    });
+
+    // ── DETAIL MODAL ──
     function openModal(id) {
       var p = products[id];
       if (!p) return;
-
-      document.getElementById('modal-img').src   = p.img;
-      document.getElementById('modal-img').alt   = p.name;
+      document.getElementById('modal-img').src = p.img;
+      document.getElementById('modal-img').alt = p.name;
       document.getElementById('modal-brand').textContent = p.brand;
-      document.getElementById('modal-name').textContent  = p.name;
+      document.getElementById('modal-name').textContent = p.name;
       document.getElementById('modal-price').textContent = p.price;
-      document.getElementById('modal-desc').textContent  = p.desc;
-
+      document.getElementById('modal-desc').textContent = p.desc;
       document.getElementById('modal-specs').innerHTML =
-        '<li><span>Material</span><strong>'   + p.material   + '</strong></li>' +
+        '<li><span>Material</span><strong>' + p.material + '</strong></li>' +
         '<li><span>Dimensions</span><strong>' + p.dimensions + '</strong></li>' +
-        '<li><span>Weight</span><strong>'     + p.weight     + '</strong></li>' +
-        '<li><span>Finish</span><strong>'     + p.finish     + '</strong></li>' +
-        '<li><span>Mounting</span><strong>'   + p.mounting   + '</strong></li>' +
-        '<li><span>Warranty</span><strong>'   + p.warranty   + '</strong></li>';
-
+        '<li><span>Weight</span><strong>' + p.weight + '</strong></li>' +
+        '<li><span>Finish</span><strong>' + p.finish + '</strong></li>' +
+        '<li><span>Mounting</span><strong>' + p.mounting + '</strong></li>' +
+        '<li><span>Warranty</span><strong>' + p.warranty + '</strong></li>';
+      var dl = document.getElementById('modal-download');
+      dl.href = 'Docs/' + p.docFile;
+      dl.download = p.docFile;
       document.getElementById('detail-modal').style.display = 'flex';
     }
 
-    function closeModal() {
-      document.getElementById('detail-modal').style.display = 'none';
-    }
+    function closeModal() { document.getElementById('detail-modal').style.display = 'none'; }
+    document.getElementById('detail-modal').addEventListener('click', function (e) { if (e.target === this) closeModal(); });
 
-    document.getElementById('detail-modal').onclick = function(e) {
-      if (e.target === this) closeModal();
-    };
-
-    // COMPARE FEATURE
+    // ── COMPARE ──
     var compareList = [];
-
     function addToCompare(id, btn) {
       var pos = compareList.indexOf(id);
-
       if (pos !== -1) {
         compareList.splice(pos, 1);
         btn.textContent = '+ Compare';
         btn.classList.remove('selected');
       } else {
         if (compareList.length >= 2) {
-          var oldId  = compareList.shift();
+          var oldId = compareList.shift();
           var oldBtn = document.querySelector('.btn-compare[data-id="' + oldId + '"]');
           if (oldBtn) { oldBtn.textContent = '+ Compare'; oldBtn.classList.remove('selected'); }
         }
@@ -469,72 +487,50 @@
         btn.textContent = '✓ Added';
         btn.classList.add('selected');
       }
-
       updateCompareTray();
     }
 
     function updateCompareTray() {
-      var tray  = document.getElementById('compare-tray');
+      var tray = document.getElementById('compare-tray');
       var slot0 = document.getElementById('slot-0');
       var slot1 = document.getElementById('slot-1');
-
       slot0.textContent = compareList[0] ? products[compareList[0]].name : 'Empty Slot';
       slot1.textContent = compareList[1] ? products[compareList[1]].name : 'Empty Slot';
-      slot0.className   = 'compare-slot' + (compareList[0] ? ' filled' : '');
-      slot1.className   = 'compare-slot' + (compareList[1] ? ' filled' : '');
-
+      slot0.className = 'compare-slot' + (compareList[0] ? ' filled' : '');
+      slot1.className = 'compare-slot' + (compareList[1] ? ' filled' : '');
       tray.style.display = compareList.length > 0 ? 'flex' : 'none';
     }
 
     function clearCompare() {
-      for (var i = 0; i < compareList.length; i++) {
-        var btn = document.querySelector('.btn-compare[data-id="' + compareList[i] + '"]');
+      compareList.forEach(function (id) {
+        var btn = document.querySelector('.btn-compare[data-id="' + id + '"]');
         if (btn) { btn.textContent = '+ Compare'; btn.classList.remove('selected'); }
-      }
+      });
       compareList = [];
       updateCompareTray();
     }
 
     function showCompareModal() {
       if (compareList.length < 2) return;
-
       var p1 = products[compareList[0]];
       var p2 = products[compareList[1]];
-
-      var rows = [
-        ['Brand',      p1.brand,      p2.brand],
-        ['Price',      p1.price,      p2.price],
-        ['Material',   p1.material,   p2.material],
-        ['Dimensions', p1.dimensions, p2.dimensions],
-        ['Weight',     p1.weight,     p2.weight],
-        ['Finish',     p1.finish,     p2.finish],
-        ['Mounting',   p1.mounting,   p2.mounting],
-        ['Warranty',   p1.warranty,   p2.warranty]
-      ];
-
+      var rows = [['Brand', p1.brand, p2.brand], ['Price', p1.price, p2.price], ['Material', p1.material, p2.material], ['Dimensions', p1.dimensions, p2.dimensions], ['Weight', p1.weight, p2.weight], ['Finish', p1.finish, p2.finish], ['Mounting', p1.mounting, p2.mounting], ['Warranty', p1.warranty, p2.warranty]];
       var html = '<thead><tr><th></th><th>' + p1.name + '</th><th>' + p2.name + '</th></tr></thead><tbody>';
-      for (var i = 0; i < rows.length; i++) {
-        html += '<tr>';
-        html += '<td class="row-label">' + rows[i][0] + '</td>';
-        html += '<td>' + rows[i][1] + '</td>';
-        html += '<td>' + rows[i][2] + '</td>';
-        html += '</tr>';
-      }
+      rows.forEach(function (r) { html += '<tr><td class="row-label">' + r[0] + '</td><td>' + r[1] + '</td><td>' + r[2] + '</td></tr>'; });
       html += '</tbody>';
-
       document.getElementById('compare-table').innerHTML = html;
       document.getElementById('compare-modal').style.display = 'flex';
     }
 
-    function closeCompareModal() {
-      document.getElementById('compare-modal').style.display = 'none';
-    }
+    function closeCompareModal() { document.getElementById('compare-modal').style.display = 'none'; }
+    document.getElementById('compare-modal').addEventListener('click', function (e) { if (e.target === this) closeCompareModal(); });
 
-    document.getElementById('compare-modal').onclick = function(e) {
-      if (e.target === this) closeCompareModal();
-    };
+    // ── STICKY NAV ──
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('stuck', scrollY > 60);
+    });
 
-    // HAMBURGER TOGGLE
+    // ── HAMBURGER ──
     const hbg    = document.getElementById('hbg');
     const mobNav = document.getElementById('mobNav');
     let isOpen   = false;
@@ -571,6 +567,6 @@
     });
 
   </script>
-
 </body>
+
 </html>
