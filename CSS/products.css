@@ -798,8 +798,8 @@
 
 /* ── CONTACT BAND ── */
 .contact-band {
-  background: #1e1810;
-  padding: 4rem 10%;
+  background: #e8824a;
+  padding: 5rem 7%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -815,15 +815,15 @@
   line-height: 1.2;
 }
 
-.contact-band h2 em {
+/* .contact-band h2 em {
   font-style: italic;
-  color: #e8824a;
-}
+  color: #e88;
+} */
 
 .contact-band p {
   font-family: 'Outfit', sans-serif;
   font-size: .85rem;
-  color: #8a7a6a;
+  color: #faf4ee;
   font-weight: 300;
   line-height: 1.8;
   max-width: 350px;
@@ -834,9 +834,9 @@
   font-size: .72rem;
   letter-spacing: .16em;
   text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, .3);
-  background: transparent;
-  color: #fff;
+  border: 1px solid #fff;
+  background: #fff;
+  color: #e8824a;
   padding: .9rem 2rem;
   text-decoration: none;
   transition: all .3s;
@@ -845,8 +845,7 @@
 }
 
 .btn-white:hover {
-  background: #fff;
-  color: #1e1810;
+    opacity: .9;
 }
 
 /* ── FOOTER ── */
