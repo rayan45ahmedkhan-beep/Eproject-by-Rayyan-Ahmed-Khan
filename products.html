@@ -447,10 +447,9 @@
     <div class="foot-logo">Jensen<span>Decors</span></div>
     <ul class="foot-links">
       <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
       <li><a href="products.html">Products</a></li>
-      <li><a href="index.html#brands">Brands</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
     </ul>
     <span class="foot-copy">© 2024 Jensen Decors. All rights reserved.</span>
   </footer>
@@ -538,21 +537,6 @@
       });
       document.getElementById('results-count').textContent = count + ' Product' + (count !== 1 ? 's' : '');
       document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
-      // updateActiveTags();
-    // }
-
-    // function updateActiveTags() {
-    //   var af = document.getElementById('active-filters');
-    //   af.innerHTML = '';
-    //   if (activeCat !== 'all') {
-    //     var t = document.createElement('span'); t.className = 'af-tag'; t.textContent = activeCat; af.appendChild(t);
-    //   }
-    //   if (activeBrand !== 'all') {
-    //     var t2 = document.createElement('span'); t2.className = 'af-tag'; t2.textContent = activeBrand; af.appendChild(t2);
-    //   }
-    //   if (activeSub !== 'all') {
-    //     var t3 = document.createElement('span'); t3.className = 'af-tag'; t3.textContent = activeSub; af.appendChild(t3);
-    //   }
     }
 
     document.querySelectorAll('#cat-pills .fp').forEach(function (btn) {
