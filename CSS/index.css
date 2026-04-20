@@ -59,6 +59,7 @@ nav.stuck {
 }
 
 .nav-menu a {
+  position: relative;
   font-size: 15px;
   text-transform: uppercase;
   color: #8a7a6a;
