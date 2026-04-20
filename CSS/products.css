@@ -50,8 +50,22 @@
   transition: color .25s;
 }
 
+.nav-menu a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #e8824a;
+  transition: all ease-in 350ms;
+}
+
 .nav-menu a:hover {
-  color: #1e1810;
+  color: #e8824a;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
 }
 
 .nav-cta {
