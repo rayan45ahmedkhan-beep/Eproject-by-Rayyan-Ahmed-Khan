@@ -183,6 +183,10 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2.5rem 5% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
 }
 
 .filter-row {
@@ -190,6 +194,7 @@
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
+  flex: 1;
   margin-bottom: 1rem;
 }
 
@@ -198,7 +203,7 @@
   font-size: .68rem;
   letter-spacing: .15em;
   text-transform: uppercase;
-  color: #8a7a6a;
+  color: #c96a30;
   font-weight: 400;
   min-width: 90px;
   flex-shrink: 0;
@@ -208,38 +213,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: .5rem;
-}
-
-.fp {
-  font-family: 'Outfit', sans-serif;
-  font-size: .72rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  font-weight: 400;
-  border: 1px solid #d4b896;
-  background: transparent;
-  color: #8a7a6a;
-  padding: .45rem 1.1rem;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all .25s;
-}
-
-.fp:hover {
-  border-color: #e8824a;
-  color: #e8824a;
-}
-
-.fp.active {
-  background: #1e1810;
-  border-color: #1e1810;
-  color: #fff;
-}
-
-.filter-divider {
-  height: 1px;
-  background: rgba(232, 130, 74, .15);
-  margin: 1.2rem 0;
 }
 
 .results-bar {
@@ -257,21 +230,10 @@
   color: #8a7a6a;
 }
 
-.active-filters {
-  display: flex;
-  gap: .4rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.af-tag {
-  font-family: 'Outfit', sans-serif;
-  font-size: .68rem;
-  background: #faf4ee;
-  border: 1px solid #e8824a;
-  color: #c96a30;
-  border-radius: 999px;
-  padding: .3rem .8rem;
+select{
+  height: 25px;
+  border-radius: 5px;
+  /* border: 1px solid #c96a30; */
 }
 
 /* ── PRODUCT GRID ── */

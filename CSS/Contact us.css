@@ -283,7 +283,7 @@
     }
 
     .info-panel {
-        background: #fdf0e8;
+            background: #fdf0e8;
         padding: 6rem 6% 6rem 7%;
         display: flex;
         flex-direction: column;

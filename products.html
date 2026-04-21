@@ -48,44 +48,40 @@
 
     <div class="filter-row">
       <span class="filter-row-label">Category</span>
-      <div class="filter-pills" id="cat-pills">
-        <button class="fp active" data-cat="all">All Categories</button>
-        <button class="fp" data-cat="Metal Wall Art">Metal Wall Art</button>
-        <button class="fp" data-cat="Wall Papers">Wall Papers</button>
-        <button class="fp" data-cat="Photo Frame Art">Photo Frame Art</button>
-        <button class="fp" data-cat="Mirror Art">Mirror Art</button>
-        <button class="fp" data-cat="Wall Shelves">Wall Shelves</button>
-        <button class="fp" data-cat="Wall Mounted Animals">Wall Mounted Animals</button>
-      </div>
+      <select class="filter-pills" id="cat-pills">
+        <option data-cat="all">All Categories</option>
+        <option data-cat="Metal Wall Art">Metal Wall Art</option>
+        <option data-cat="Wall Papers">Wall Papers</option>
+        <option data-cat="Photo Frame Art">Photo Frame Art</option>
+        <option data-cat="Mirror Art">Mirror Art</option>
+        <option data-cat="Wall Shelves">Wall Shelves</option>
+        <option data-cat="Wall Mounted Animals">Wall Mounted Animals</option>
+      </select>
     </div>
-
-    <div class="filter-divider"></div>
 
     <div class="filter-row">
       <span class="filter-row-label">Brand</span>
-      <div class="filter-pills" id="brand-pills">
-        <button class="fp active" data-brand="all">All Brands</button>
-        <button class="fp" data-brand="Gloster">Gloster</button>
-        <button class="fp" data-brand="Artisan Co.">Artisan Co.</button>
-        <button class="fp" data-brand="Nordic House">Nordic House</button>
-        <button class="fp" data-brand="UrbanWall">UrbanWall</button>
-        <button class="fp" data-brand="Luxe Décor">Luxe Décor</button>
-      </div>
+      <select class="filter-pills" id="brand-pills">
+        <option data-brand="all">All Brands</option>
+        <option data-brand="Gloster">Gloster</option>
+        <option data-brand="Artisan Co.">Artisan Co.</option>
+        <option data-brand="Nordic House">Nordic House</option>
+        <option data-brand="UrbanWall">UrbanWall</option>
+        <option data-brand="Luxe Décor">Luxe Décor</option>
+      </select>
     </div>
-
-    <div class="filter-divider"></div>
 
     <div class="filter-row">
       <span class="filter-row-label">Subcategory</span>
-      <div class="filter-pills" id="sub-pills">
-        <button class="fp active" data-sub="all">All Subcategories</button>
-        <button class="fp" data-sub="Contemporary">Contemporary</button>
-        <button class="fp" data-sub="Rustic">Rustic</button>
-        <button class="fp" data-sub="Minimalist">Minimalist</button>
-        <button class="fp" data-sub="Luxe">Luxe</button>
-        <button class="fp" data-sub="Industrial">Industrial</button>
-        <button class="fp" data-sub="Boho">Boho</button>
-      </div>
+      <select class="filter-pills" id="sub-pills">
+        <option data-sub="all">All Subcategories</option>
+        <option data-sub="Contemporary">Contemporary</option>
+        <option data-sub="Rustic">Rustic</option>
+        <option data-sub="Minimalist">Minimalist</option>
+        <option data-sub="Luxe">Luxe</option>
+        <option data-sub="Industrial">Industrial</option>
+        <option data-sub="Boho">Boho</option>
+      </select>
     </div>
 
     <div class="results-bar">
@@ -519,52 +515,40 @@
       17: { brand: "Gloster", name: "Arched Slim Mirror", price: "Rs. 15,300", img: "Images/mirror art - 3.jpg", desc: "Full-length arch-top mirror in a slim powder-coated steel frame. A contemporary essential for hallways and dressing areas.", material: "Steel & Glass", dimensions: "50 × 160 cm", weight: "6.0 kg", finish: "Matte black powder coat", mounting: "Wall screws & D-ring", warranty: "2 years", docFile: "product-17-Arched_Slim_Mirror.docx" },
       18: { brand: "Artisan Co.", name: "Reclaimed Oak Corner Shelf", price: "Rs. 7,800", img: "Images/Wall - 4.jpg", desc: "Live-edge reclaimed oak corner shelf with hand-forged iron brackets. Each piece unique — rustic character with serious structural integrity.", material: "Reclaimed oak & iron", dimensions: "45 × 20 × 3 cm", weight: "3.5 kg", finish: "Natural wax", mounting: "Iron bracket (included)", warranty: "2 years", docFile: "product-18-Reclaimed_Oak_Corner_Shelf.docx" }
     };
-
+    
     // ── FILTER LOGIC ──
-    var activeCat = 'all';
-    var activeBrand = 'all';
-    var activeSub = 'all';
+var activeCat = 'all';
+var activeBrand = 'all';
+var activeSub = 'all';
 
-    function applyFilters() {
-      var cards = document.querySelectorAll('.product-card');
-      var count = 0;
-      cards.forEach(function (card) {
-        var matchCat = activeCat === 'all' || card.getAttribute('data-cat') === activeCat;
-        var matchBrand = activeBrand === 'all' || card.getAttribute('data-brand') === activeBrand;
-        var matchSub = activeSub === 'all' || card.getAttribute('data-sub') === activeSub;
-        if (matchCat && matchBrand && matchSub) { card.style.display = ''; count++; }
-        else { card.style.display = 'none'; }
-      });
-      document.getElementById('results-count').textContent = count + ' Product' + (count !== 1 ? 's' : '');
-      document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
-    }
+function applyFilters() {
+  var cards = document.querySelectorAll('.product-card');
+  var count = 0;
+  cards.forEach(function (card) {
+    var matchCat = activeCat === 'all' || card.getAttribute('data-cat') === activeCat;
+    var matchBrand = activeBrand === 'all' || card.getAttribute('data-brand') === activeBrand;
+    var matchSub = activeSub === 'all' || card.getAttribute('data-sub') === activeSub;
+    if (matchCat && matchBrand && matchSub) { card.style.display = ''; count++; }
+    else { card.style.display = 'none'; }
+  });
+  document.getElementById('results-count').textContent = count + ' Product' + (count !== 1 ? 's' : '');
+  document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
+}
 
-    document.querySelectorAll('#cat-pills .fp').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('#cat-pills .fp').forEach(function (b) { b.classList.remove('active'); });
-        this.classList.add('active');
-        activeCat = this.getAttribute('data-cat');
-        applyFilters();
-      });
-    });
+document.getElementById('cat-pills').addEventListener('change', function () {
+  activeCat = this.value;
+  applyFilters();
+});
 
-    document.querySelectorAll('#brand-pills .fp').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('#brand-pills .fp').forEach(function (b) { b.classList.remove('active'); });
-        this.classList.add('active');
-        activeBrand = this.getAttribute('data-brand');
-        applyFilters();
-      });
-    });
+document.getElementById('brand-pills').addEventListener('change', function () {
+  activeBrand = this.value;
+  applyFilters();
+});
 
-    document.querySelectorAll('#sub-pills .fp').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        document.querySelectorAll('#sub-pills .fp').forEach(function (b) { b.classList.remove('active'); });
-        this.classList.add('active');
-        activeSub = this.getAttribute('data-sub');
-        applyFilters();
-      });
-    });
+document.getElementById('sub-pills').addEventListener('change', function () {
+  activeSub = this.value;
+  applyFilters();
+});
 
     // ── DETAIL MODAL ──
     function openModal(id) {
@@ -638,12 +622,12 @@
     function closeCompareModal() { document.getElementById('compare-modal').style.display = 'none'; }
     document.getElementById('compare-modal').addEventListener('click', function (e) { if (e.target === this) closeCompareModal(); });
 
-    // ── STICKY NAV ──
+    // navbar
     window.addEventListener('scroll', () => {
       document.getElementById('nav').classList.toggle('stuck', scrollY > 60);
     });
 
-    // ── HAMBURGER ──
+    // hamburger
     const hbg    = document.getElementById('hbg');
     const mobNav = document.getElementById('mobNav');
     let isOpen   = false;
